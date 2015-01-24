@@ -8,7 +8,7 @@
     </target>
     <target name="phpunit">
        <phpunit bootstrap="./src/Calculator.php" pharlocation="/usr/local/bin/phpunit">
-         <formatter type="clover" outfile="./reports/phpunit.xml"/>
+         <formatter type="xml" outfile="./reports/phpunit.xml"/>
          <batchtest>
            <fileset dir="./test/">
              <include name="**/*Test.php"/>
