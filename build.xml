@@ -4,6 +4,7 @@
     <target name="init" >
         <delete dir= "./reports" includeemptydirs= "true" />
         <mkdir dir= "./reports" />
+        <chmod file="./reports/" mode= "0777" verbose= "true" />
     </target>
     <target name="phpunit">
        <phpunit bootstrap="./src/Calculator.php" pharlocation="/usr/local/bin/phpunit">
