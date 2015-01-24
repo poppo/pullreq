@@ -6,7 +6,7 @@
         <mkdir dir= "./reports" />
     </target>
     <target name="phpunit">
-       <phpunit>
+       <phpunit pharlocation="/usr/local/bin/phpunit">
          <formatter type="xml" outfile="./reports/phpunit.xml"/>
          <batchtest>
            <fileset dir="./test/">
