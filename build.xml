@@ -7,7 +7,7 @@
         <chmod file="./reports/" mode= "0777" verbose= "true" />
     </target>
     <target name="phpunit">
-       <phpunit codecoverage="true" bootstrap="./src/Calculator.php" pharlocation="/usr/local/bin/phpunit">
+       <phpunit bootstrap="./src/Calculator.php" pharlocation="/usr/local/bin/phpunit">
          <formatter type="clover" outfile="./reports/phpunit.xml"/>
          <batchtest>
            <fileset dir="./test/">
