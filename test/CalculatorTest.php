@@ -61,7 +61,7 @@ class CalculatorTest extends PHPUnit_Framework_TestCase
     {
         $this->assertEquals(
             1,
-            $this->object->add(1, 0)
+            $this->object->add(2, 0)
         );
     }
 
