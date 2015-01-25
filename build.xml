@@ -10,7 +10,7 @@
 
     <target name="phpmd" description= "Generate pmd.xml using PHP Mess Doctor" >
          <phpmd rulesets= "codesize,unusedcode,design,naming" >
-             <fileset dir= "./app/" >
+             <fileset dir= "src" >
                  <include name= "**/*.php" />
                  <exclude name= "**/*Test.php" />
              </fileset>
