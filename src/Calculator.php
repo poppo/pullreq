@@ -14,10 +14,13 @@ class Calculator
     }
 
     public function test1(){
-        return 100;
+        $tes = 'a';
+        if (!empty($tes)) {
+            $tes = 'b';
+        }
+        if (!empty($tes)) {
+            $tes = 'b';
+        }
     }
 
-    public function test2(){
-        return 100;
-    }
 }
