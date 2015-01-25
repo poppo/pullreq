@@ -31,13 +31,17 @@
       </coverage-report>
     </target>
 
+    <docblox title="Test Documentation" destdir="./phpdoc">
+      <fileset dir="./src">
+        <include name="**/*.php" />
+      </fileset>
+    </docblox>
+
     <target name="phpdoc">
-      <mkdir dir="phpdoc" />
-      <phpdoc title="Test Documentation"
-            destdir="./phpdoc"
-            output="HTML:Smarty:PHP">
+      <docblox title="Test Documentation" destdir="./phpdoc">
         <fileset dir="./src">
+          <include name="**/*.php" />
         </fileset>
-      </phpdoc>
+      </docblox>
     </target>
 </project>
