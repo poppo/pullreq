@@ -1,11 +1,13 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <project name= "BuildTest" basedir= "." default= "main">
-    <target name="main" depends= "init, phpunit"></target>
+    <target name="main" depends= "init, phpunit, phpdoc"></target>
     <target name="init" >
         <delete dir= "./reports" includeemptydirs= "true" />
         <mkdir dir= "./reports" />
+        <mkdir dir= "./phpdoc" />
         <chmod file="./reports/" mode= "0777" verbose= "true" />
     </target>
+
     <target name="phpunit">
        <mkdir dir="clover" />
        <coverage-setup database="./reports/coverage.db">
@@ -27,5 +29,15 @@
       <coverage-report outfile="clover.xml">
         <report todir="clover" />
       </coverage-report>
+    </target>
+
+    <target name="phpdoc">
+      <mkdir dir="phpdoc" />
+      <phpdoc title="Test Documentation"
+            destdir="./phpdoc"
+            output="HTML:Smarty:PHP">
+        <fileset dir="./src">
+        </fileset>
+      </phpdoc>
     </target>
 </project>
