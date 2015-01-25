@@ -12,4 +12,12 @@ class Calculator
     {
         return $a + $b;
     }
+
+    public function test1(){
+        return 100;
+    }
+
+    public function test1(){
+        return 100;
+    }
 }
