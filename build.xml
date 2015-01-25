@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <project name= "BuildTest" basedir= "." default= "main">
-    <target name="main" depends= "init, phpunit, phpdoc"></target>
+    <target name="main" depends= "init, phpunit"></target>
     <target name="init" >
         <delete dir= "./reports" includeemptydirs= "true" />
         <mkdir dir= "./reports" />
@@ -31,11 +31,4 @@
       </coverage-report>
     </target>
 
-    <target name="phpdoc">
-      <exec "." executable="phpdoc" output="./phpdoc/phpdoc.log">
-        <arg line="run" />
-        <arg line="-t ./phpdoc" />
-        <arg line="-d ./src" />
-      </exec>
-    </target>
 </project>
