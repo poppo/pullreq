@@ -17,7 +17,7 @@ class Calculator
         return 100;
     }
 
-    public function test1(){
+    public function test2(){
         return 100;
     }
 }
