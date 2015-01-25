@@ -31,12 +31,6 @@
       </coverage-report>
     </target>
 
-    <docblox title="Test Documentation" destdir="./phpdoc">
-      <fileset dir="./src">
-        <include name="**/*.php" />
-      </fileset>
-    </docblox>
-
     <target name="phpdoc">
       <docblox title="Test Documentation" destdir="./phpdoc">
         <fileset dir="./src">
