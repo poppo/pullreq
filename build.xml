@@ -20,13 +20,9 @@
 
     <!-- PHPCPD -->
     <target name="phpcpd" >
-         <phpcpd>
-              <fileset dir= "src" >
-                  <include name= "**/*.php" />
-                  <exclude name= "**/*Test.php" />
-              </fileset>
-              <formatter type= "pmd" outfile= "reports/cpd.xml" />
-         </phpcpd>
+       <exec executable="phpcpd">
+           <arg line="--log-pmd /Users/poppo/.jenkins/jobs/git_build/workspace/reports/cpd.xml /Users/poppo/.jenkins/jobs/git_build/workspace/src/Calculator.php" />
+       </exec>
     </target>
 
     <target name="phpunit">
