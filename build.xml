@@ -1,11 +1,21 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <project name= "BuildTest" basedir= "." default= "main">
-    <target name="main" depends= "init, phpunit"></target>
+    <target name="main" depends= "init, phpmd, phpunit"></target>
     <target name="init" >
         <delete dir= "./reports" includeemptydirs= "true" />
         <mkdir dir= "./reports" />
         <mkdir dir= "./phpdoc" />
         <chmod file="./reports/" mode= "0777" verbose= "true" />
+    </target>
+
+    <target name="phpmd" description= "Generate pmd.xml using PHP Mess Doctor" >
+         <phpmd rulesets= "codesize,unusedcode,design,naming" >
+             <fileset dir= "./app/" >
+                 <include name= "**/*.php" />
+                 <exclude name= "**/*Test.php" />
+             </fileset>
+             <formatter type= "xml" outfile= "reports/pmd.xml"/>
+         </phpmd>
     </target>
 
     <target name="phpunit">
