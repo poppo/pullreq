@@ -32,10 +32,10 @@
     </target>
 
     <target name="phpdoc">
-      <docblox title="Test Documentation" destdir="./phpdoc">
-        <fileset dir="./src">
-          <include name="**/*.php" />
-        </fileset>
-      </docblox>
+      <exec "." executable="phpdoc" output="./phpdoc/phpdoc.log">
+        <arg line="run" />
+        <arg line="-t ./phpdoc" />
+        <arg line="-d ./src" />
+      </exec>
     </target>
 </project>
