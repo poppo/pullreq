@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <project name= "BuildTest" basedir= "." default= "main">
-    <target name="main" depends= "init, phpmd, phpunit"></target>
+    <target name="main" depends= "init, phpmd, phpcpd, phpunit"></target>
     <target name="init" >
         <delete dir= "./reports" includeemptydirs= "true" />
         <mkdir dir= "./reports" />
@@ -16,6 +16,17 @@
              </fileset>
              <formatter type= "xml" outfile= "reports/pmd.xml"/>
          </phpmd>
+    </target>
+
+    <!-- PHPCPD -->
+    <target name="phpcpd" >
+         <phpcpd>
+              <fileset dir= "src" >
+                  <include name= "**/*.php" />
+                  <exclude name= "**/*Test.php" />
+              </fileset>
+              <formatter type= "pmd" outfile= "reports/cpd.xml" />
+         </phpcpd>
     </target>
 
     <target name="phpunit">
