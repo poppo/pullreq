@@ -48,9 +48,9 @@
       </coverage-report>
     </target>
 
-    <target name="phpdoc" description= "test document">
+    <target name="phpdoc" description="test document">
         <exec executable="phpdoc">
-            <arg line="run -t src -d doc/ />
+            <arg line="run -t src -d doc" />
         </exec>
     </target>
 
